@@ -1,0 +1,119 @@
+import java.util.Scanner; 
+
+public class Electricitybill 
+
+{ 
+
+ public static void main(String[] args) 
+
+{ 
+
+Scanner sc=new Scanner(System.in); 
+
+int consumerno; 
+
+String consumername; 
+
+int prevReading,currReading; 
+
+String connType; 
+
+double amount; 
+
+int units; 
+
+System.out.print("Enter consumer number:"); 
+
+consumerno=sc.nextInt(); 
+
+System.out.print("Enter consumer name:"); 
+
+consumername=sc.nextLine(); 
+
+System.out.print("Enter previous Month Reading:"); 
+
+prevReading=sc.nextInt(); 
+
+System.out.print("Enter current Month Reading:"); 
+
+currReading=sc.nextInt(); 
+
+sc.nextLine(); 
+
+System.out.print("Enter connection Type(Domestic/Commercial):"); 
+
+connType=sc.nextLine().toLowercase(); 
+
+units=currReading-prevReading; 
+
+if(connType.equals ("domestic")) 
+
+{ 
+
+ if(units<=100) 
+
+   amount=0; 
+
+ else if(units<=200) 
+
+   amount=100*1+(units-100)*2; 
+
+ else if(units<=500) 
+
+   amount=100*1+100*2+(units-200)*4; 
+
+ else 
+
+   amount=100*1+100*2+300*4+(units-500)*6; 
+
+} 
+
+else if(connType.equals("Commercial")) 
+
+{ 
+
+ if(units<=100) 
+
+   amount=units*2; 
+
+ else if(units<=200) 
+
+   amount=100*2+(units-100)*4; 
+
+ else if(units<=500) 
+
+   amount=100*2+100*4+(units-200)*6; 
+
+ else 
+
+   amount=100*2+100*4+300*6+(units-500)*7; 
+
+} 
+
+else 
+
+{ 
+
+ System.out.println("Invalid  connection type"); 
+
+return; 
+
+ } 
+
+System.out.println("_______ELECTRICITY BILL________"); 
+
+System.out.println("Consumer No:" +consumerno); 
+
+System.out.println("Consumer Name:" +consumername); 
+
+System.out.println("Connection Type:" +connType); 
+
+System.out.println("Units consumed:" +units); 
+
+System.out.println(Bill amount Rs:" +amount); 
+
+} 
+
+} 
+
+ 
