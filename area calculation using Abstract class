@@ -1,0 +1,72 @@
+import java.util.Scanner;
+abstract class Shape
+{
+ int a,b;
+ abstract void area();
+}
+class Rectangle extends Shape
+{
+ void area()
+{
+System.out.println("Rectangle area"+(a*b));
+}
+}
+class Triangle extends Shape
+{
+ void area()
+{
+ System.out.println("Triangle area"+(0.5*a*b));
+}
+}
+class Circle extends Shape
+{
+ void area()
+{
+ System.out.println("Circle area"+(3.14*a*a));
+}
+}
+class shapes
+{
+ public static void main(String args[])
+  {
+    Scanner sc=new Scanner(System.in);
+    System.out.println("1.Rectangle");
+    System.out.println("2.Triangle");
+    System.out.println("3.Circle");
+    System.out.println("Enter your choice:");
+    int num=sc.nextInt();
+switch(num)
+{
+ case 1:
+    Rectangle r=new Rectangle();
+    System.out.println("Rectangle");
+    System.out.println("Length");
+    r.a=sc.nextInt();
+    System.out.println("Breadth");
+    r.b=sc.nextInt();
+    r.area();
+    break;
+ case 2:
+    Triangle t=new Triangle();
+    System.out.println("Triangle");
+    System.out.println("Base");
+    t.a=sc.nextInt();
+    System.out.println("Height");
+    t.b=sc.nextInt();
+    t.area();
+    break;
+case 3:
+    Circle c=new Circle();
+    System.out.println("Circle");
+    System.out.println("Length");
+    c.a=sc.nextInt();
+    System.out.println("Breadth");
+    c.b=sc.nextInt();
+    c.area();
+    break;
+default:
+   System.out.println("Invalid input");
+}
+}
+} 
+       
